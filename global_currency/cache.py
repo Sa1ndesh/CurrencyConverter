@@ -205,3 +205,41 @@ class SQLiteCache:
             fallback_used=None,
             fetched_at=fetched_at,
         )
+
+
+
+class MemoryCache:
+    """In-memory cache for ultra-fast rate lookups with optional TTL expiration."""
+
+    def __init__(self, ttl_seconds: Optional[int] = 3600):
+        self.ttl_seconds = ttl_seconds
+        self._cache: dict = {}
+
+    def _make_key(self, base: str, quote: str, obs_date: date, provider: Optional[str] = None) -> str:
+        prov = provider.lower() if provider else "any"
+        return f"{base.upper()}:{quote.upper()}:{obs_date.isoformat()}:{prov}"
+
+    def get_rate(
+        self,
+        base: str,
+        quote: str,
+        observation_date: date,
+        provider: Optional[str] = None
+    ) -> Optional[RateObservation]:
+        key = self._make_key(base, quote, observation_date, provider)
+        if key not in self._cache:
+            return None
+        obs, cached_time = self._cache[key]
+        if self.ttl_seconds is not None:
+            if (datetime.utcnow() - cached_time).total_seconds() > self.ttl_seconds:
+                del self._cache[key]
+                return None
+        return obs
+
+    def save_observation(self, obs: RateObservation) -> None:
+        key = self._make_key(obs.base, obs.quote, obs.rate_date, obs.provider)
+        self._cache[key] = (obs, datetime.utcnow())
+
+    def clear(self) -> None:
+        self._cache.clear()
+

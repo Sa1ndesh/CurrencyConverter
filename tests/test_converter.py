@@ -83,6 +83,13 @@ def test_cross_rate_derivation(mock_converter):
     assert len(res.source_observations) == 2
 
 
+def test_converter_date_kwarg(mock_converter):
+    res = mock_converter.convert(10, "USD", "INR", date="2005-03-18")
+    assert res.result == Decimal("436.020")
+    val = mock_converter.convert_value(10, "USD", "INR", date="2005-03-18")
+    assert val == Decimal("436.020")
+
+
 def test_integration_2005_usd_inr():
     """Integration test for USD/INR requested on 2005-03-18.
 
@@ -92,7 +99,7 @@ def test_integration_2005_usd_inr():
     """
     converter = CurrencyConverter()  # Uses live Frankfurter, BIS, IMF providers
     try:
-        res = converter.convert(1, "USD", "INR", date_val="2005-03-18", fallback="previous")
+        res = converter.convert(1, "USD", "INR", date="2005-03-18", fallback="previous")
         assert res.amount == Decimal("1")
         assert res.from_currency == "USD"
         assert res.to_currency == "INR"
@@ -105,3 +112,4 @@ def test_integration_2005_usd_inr():
     except HistoricalRateNotFound as e:
         # Valid behavior if offline or no dataset coverage found under gap strategy
         assert "2005-03-18" in str(e) or "USD/INR" in str(e)
+

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "global-currency"
-version = "0.1.4"
+version = "1.0.0"
 description = "Historical and current currency conversion across active and legacy world currencies with multi-provider fallbacks and complete provenance."
 readme = "README.md"
 authors = [
@@ -21,6 +21,9 @@ dev = [
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0"
 ]
+charts = [
+    "matplotlib>=3.7.0"
+]
 
 [project.scripts]
 global-currency = "global_currency.cli:main"
@@ -34,3 +37,4 @@ global_currency = ["data/*.json"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
+

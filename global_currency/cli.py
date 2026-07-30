@@ -83,7 +83,10 @@ def main():
                     date=args.date,
                     fallback=args.fallback
                 )
-                print(f"{args.amount} {args.from_currency.upper()} = {val} {args.to_currency.upper()}")
+                from global_currency.formatting import format_currency
+                formatted_target = format_currency(val, args.to_currency)
+                print(f"{args.amount} {args.from_currency.upper()} = {formatted_target} {args.to_currency.upper()}")
+
 
         elif args.command == "info":
             info = currency_info(args.code)
