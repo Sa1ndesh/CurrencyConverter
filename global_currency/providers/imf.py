@@ -4,9 +4,9 @@ import logging
 from datetime import date
 from decimal import Decimal
 from typing import List, Optional
+
 import requests
 
-from global_currency.exceptions import ProviderUnavailableError
 from global_currency.models import RateObservation
 from global_currency.providers.base import ExchangeRateProvider
 
@@ -35,39 +35,45 @@ class IMFProvider(ExchangeRateProvider):
         target_date: date,
         provider_pin: Optional[str] = None
     ) -> Optional[RateObservation]:
+
         base_u = base.upper()
         quote_u = quote.upper()
         date_str = target_date.isoformat()
 
-        # Target IMF series: e.g. D.IN.USD (Daily, National currency per USD)
+        # IMF stores national currency per USD
         target_curr = quote_u if base_u == "USD" else base_u
 
         url = f"{self.BASE_URL}/D.{target_curr}.USD"
         params = {
             "startPeriod": date_str,
-            "endPeriod": date_str
+            "endPeriod": date_str,
         }
 
         try:
-            resp = requests.get(url, params=params, timeout=self.timeout)
-            if resp.status_code != 200:
-                return None
-            data = resp.json()
+            response = requests.get(url, params=params, timeout=self.timeout)
 
-            compact_data = data.get("CompactData", {})
-            dataset = compact_data.get("DataSet", {})
-            series = dataset.get("Series")
+            if response.status_code != 200:
+                return None
+
+            data = response.json()
+
+            series = (
+                data.get("CompactData", {})
+                    .get("DataSet", {})
+                    .get("Series")
+            )
+
             if not series:
                 return None
 
             obs = series.get("Obs")
+
             if not obs:
                 return None
 
-            # Handle single observation vs list
             if isinstance(obs, dict):
                 rate_str = obs.get("@OBS_VALUE")
-            elif isinstance(obs, list) and len(obs) > 0:
+            elif isinstance(obs, list):
                 rate_str = obs[0].get("@OBS_VALUE")
             else:
                 return None
@@ -75,14 +81,15 @@ class IMFProvider(ExchangeRateProvider):
             if not rate_str:
                 return None
 
-            rate_val = Decimal(str(rate_str))
+            rate = Decimal(rate_str)
+
             if base_u != "USD":
-                rate_val = Decimal("1") / rate_val
+                rate = Decimal("1") / rate
 
             return RateObservation(
                 base=base_u,
                 quote=quote_u,
-                rate=rate_val,
+                rate=rate,
                 requested_date=target_date,
                 rate_date=target_date,
                 provider=self.name,
@@ -94,11 +101,13 @@ class IMFProvider(ExchangeRateProvider):
                 source_observations=None,
                 fallback_used=None,
             )
-        except requests.exceptions.RequestException as e:
-            logger.warning(f"IMF SDMX request failed: {e}")
+
+        except requests.exceptions.RequestException:
+            # IMF unavailable → silently try the next provider
             return None
-        except Exception as e:
-            logger.warning(f"IMF SDMX parse error: {e}")
+
+        except Exception:
+            # Invalid response → silently try the next provider
             return None
 
     def get_series(
@@ -106,6 +115,6 @@ class IMFProvider(ExchangeRateProvider):
         base: str,
         quote: str,
         start_date: date,
-        end_date: date
+        end_date: date,
     ) -> List[RateObservation]:
         return []
