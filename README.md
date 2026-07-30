@@ -3,7 +3,8 @@
 [![CI](https://github.com/Sa1ndesh/CurrencyConverter/actions/workflows/ci.yml/badge.svg)](https://github.com/Sa1ndesh/CurrencyConverter/actions/workflows/ci.yml)
 [![PyPI version](https://img.shields.io/pypi/v/global-currency.svg)](https://pypi.org/project/global-currency/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python Version](https://img.shields.io/pypi/pyversions/global-currency.svg)](https://pypi.org/project/global-currency/)
+[![Python Version](https://img.shields.io/badge/python-%3E%3D3.10-blue.svg)](https://pypi.org/project/global-currency/)
+
 
 **Global Currency** is a production-ready, open-source Python library and CLI tool for current and historical currency conversions across active and legacy world currencies. Built with multi-provider failover, strict Decimal precision, multi-tiered caching (Memory & SQLite), async support, and historical charting capabilities.
 
