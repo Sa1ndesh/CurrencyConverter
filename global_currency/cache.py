@@ -2,7 +2,7 @@
 
 import json
 import sqlite3
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from decimal import Decimal
 from pathlib import Path
 from typing import List, Optional, Tuple
@@ -230,16 +230,19 @@ class MemoryCache:
         if key not in self._cache:
             return None
         obs, cached_time = self._cache[key]
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
         if self.ttl_seconds is not None:
-            if (datetime.utcnow() - cached_time).total_seconds() > self.ttl_seconds:
+            if (now - cached_time).total_seconds() > self.ttl_seconds:
                 del self._cache[key]
                 return None
         return obs
 
     def save_observation(self, obs: RateObservation) -> None:
         key = self._make_key(obs.base, obs.quote, obs.rate_date, obs.provider)
-        self._cache[key] = (obs, datetime.utcnow())
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
+        self._cache[key] = (obs, now)
 
     def clear(self) -> None:
         self._cache.clear()
+
 

@@ -1,9 +1,13 @@
 """Data models for rate observations, conversion results, and currency metadata."""
 
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from decimal import Decimal
 from typing import Optional, Tuple
+
+
+def _utcnow() -> datetime:
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 @dataclass(frozen=True)
@@ -23,7 +27,8 @@ class RateObservation:
     derivation_path: Optional[Tuple[str, ...]] = None  # e.g., ("INR", "USD", "JPY")
     source_observations: Optional[Tuple["RateObservation", ...]] = None  # Child observations for cross-rates
     fallback_used: Optional[str] = None  # "previous", "next", "nearest", None
-    fetched_at: datetime = field(default_factory=datetime.utcnow)
+    fetched_at: datetime = field(default_factory=_utcnow)
+
 
     def to_dict(self) -> dict:
         """Convert rate observation to a serializable dictionary."""
