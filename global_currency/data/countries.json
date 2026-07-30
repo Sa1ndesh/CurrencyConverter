@@ -1,0 +1,113 @@
+{
+  "source": "ISO 3166 & Historical Currency Maps",
+  "mappings": [
+    {
+      "country": "Germany",
+      "currency_code": "DEM",
+      "valid_from": "1948-06-21",
+      "valid_to": "1998-12-31"
+    },
+    {
+      "country": "Germany",
+      "currency_code": "EUR",
+      "valid_from": "1999-01-01",
+      "valid_to": null
+    },
+    {
+      "country": "France",
+      "currency_code": "FRF",
+      "valid_from": "1960-01-01",
+      "valid_to": "1998-12-31"
+    },
+    {
+      "country": "France",
+      "currency_code": "EUR",
+      "valid_from": "1999-01-01",
+      "valid_to": null
+    },
+    {
+      "country": "Italy",
+      "currency_code": "ITL",
+      "valid_from": "1861-03-17",
+      "valid_to": "1998-12-31"
+    },
+    {
+      "country": "Italy",
+      "currency_code": "EUR",
+      "valid_from": "1999-01-01",
+      "valid_to": null
+    },
+    {
+      "country": "Spain",
+      "currency_code": "ESP",
+      "valid_from": "1868-10-19",
+      "valid_to": "1998-12-31"
+    },
+    {
+      "country": "Spain",
+      "currency_code": "EUR",
+      "valid_from": "1999-01-01",
+      "valid_to": null
+    },
+    {
+      "country": "United States",
+      "currency_code": "USD",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "India",
+      "currency_code": "INR",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "United Kingdom",
+      "currency_code": "GBP",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "Japan",
+      "currency_code": "JPY",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "Australia",
+      "currency_code": "AUD",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "Canada",
+      "currency_code": "CAD",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "Switzerland",
+      "currency_code": "CHF",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "China",
+      "currency_code": "CNY",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "Brazil",
+      "currency_code": "BRL",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "country": "South Africa",
+      "currency_code": "ZAR",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "source": "ISO 4217 & Official Central Bank Registries",
+  "version": "2026.1",
+  "currencies": {
+    "USD": {
+      "code": "USD",
+      "name": "United States Dollar",
+      "symbol": "$",
+      "numeric_code": "840",
+      "active": true
+    },
+    "EUR": {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€",
+      "numeric_code": "978",
+      "active": true,
+      "start_date": "1999-01-01"
+    },
+    "INR": {
+      "code": "INR",
+      "name": "Indian Rupee",
+      "symbol": "₹",
+      "numeric_code": "356",
+      "active": true
+    },
+    "GBP": {
+      "code": "GBP",
+      "name": "British Pound Sterling",
+      "symbol": "£",
+      "numeric_code": "826",
+      "active": true
+    },
+    "JPY": {
+      "code": "JPY",
+      "name": "Japanese Yen",
+      "symbol": "¥",
+      "numeric_code": "392",
+      "active": true
+    },
+    "AUD": {
+      "code": "AUD",
+      "name": "Australian Dollar",
+      "symbol": "A$",
+      "numeric_code": "036",
+      "active": true
+    },
+    "CAD": {
+      "code": "CAD",
+      "name": "Canadian Dollar",
+      "symbol": "C$",
+      "numeric_code": "124",
+      "active": true
+    },
+    "CHF": {
+      "code": "CHF",
+      "name": "Swiss Franc",
+      "symbol": "CHF",
+      "numeric_code": "756",
+      "active": true
+    },
+    "CNY": {
+      "code": "CNY",
+      "name": "Chinese Yuan",
+      "symbol": "¥",
+      "numeric_code": "156",
+      "active": true
+    },
+    "NZD": {
+      "code": "NZD",
+      "name": "New Zealand Dollar",
+      "symbol": "NZ$",
+      "numeric_code": "554",
+      "active": true
+    },
+    "SGD": {
+      "code": "SGD",
+      "name": "Singapore Dollar",
+      "symbol": "S$",
+      "numeric_code": "702",
+      "active": true
+    },
+    "HKD": {
+      "code": "HKD",
+      "name": "Hong Kong Dollar",
+      "symbol": "HK$",
+      "numeric_code": "344",
+      "active": true
+    },
+    "SEK": {
+      "code": "SEK",
+      "name": "Swedish Krona",
+      "symbol": "kr",
+      "numeric_code": "752",
+      "active": true
+    },
+    "NOK": {
+      "code": "NOK",
+      "name": "Norwegian Krone",
+      "symbol": "kr",
+      "numeric_code": "578",
+      "active": true
+    },
+    "KRW": {
+      "code": "KRW",
+      "name": "South Korean Won",
+      "symbol": "₩",
+      "numeric_code": "410",
+      "active": true
+    },
+    "BRL": {
+      "code": "BRL",
+      "name": "Brazilian Real",
+      "symbol": "R$",
+      "numeric_code": "986",
+      "active": true
+    },
+    "RUB": {
+      "code": "RUB",
+      "name": "Russian Ruble",
+      "symbol": "₽",
+      "numeric_code": "643",
+      "active": true
+    },
+    "ZAR": {
+      "code": "ZAR",
+      "name": "South African Rand",
+      "symbol": "R",
+      "numeric_code": "710",
+      "active": true
+    },
+    "MXN": {
+      "code": "MXN",
+      "name": "Mexican Peso",
+      "symbol": "$",
+      "numeric_code": "484",
+      "active": true
+    },
+    "SAR": {
+      "code": "SAR",
+      "name": "Saudi Riyal",
+      "symbol": "﷼",
+      "numeric_code": "682",
+      "active": true
+    },
+    "AED": {
+      "code": "AED",
+      "name": "United Arab Emirates Dirham",
+      "symbol": "د.إ",
+      "numeric_code": "784",
+      "active": true
+    },
+    "DEM": {
+      "code": "DEM",
+      "name": "German Mark",
+      "symbol": "DM",
+      "numeric_code": "276",
+      "active": false,
+      "start_date": "1948-06-21",
+      "end_date": "2001-12-31"
+    },
+    "FRF": {
+      "code": "FRF",
+      "name": "French Franc",
+      "symbol": "F",
+      "numeric_code": "250",
+      "active": false,
+      "start_date": "1960-01-01",
+      "end_date": "2001-12-31"
+    },
+    "ITL": {
+      "code": "ITL",
+      "name": "Italian Lira",
+      "symbol": "L",
+      "numeric_code": "380",
+      "active": false,
+      "start_date": "1861-03-17",
+      "end_date": "2001-12-31"
+    },
+    "ESP": {
+      "code": "ESP",
+      "name": "Spanish Peseta",
+      "symbol": "Pts",
+      "numeric_code": "724",
+      "active": false,
+      "start_date": "1868-10-19",
+      "end_date": "2001-12-31"
+    },
+    "NLG": {
+      "code": "NLG",
+      "name": "Dutch Guilder",
+      "symbol": "ƒ",
+      "numeric_code": "528",
+      "active": false,
+      "start_date": "1816-01-01",
+      "end_date": "2001-12-31"
+    },
+    "BEF": {
+      "code": "BEF",
+      "name": "Belgian Franc",
+      "symbol": "fr",
+      "numeric_code": "056",
+      "active": false,
+      "start_date": "1832-06-05",
+      "end_date": "2001-12-31"
+    },
+    "ATS": {
+      "code": "ATS",
+      "name": "Austrian Schilling",
+      "symbol": "S",
+      "numeric_code": "040",
+      "active": false,
+      "start_date": "1945-11-30",
+      "end_date": "2001-12-31"
+    },
+    "FIM": {
+      "code": "FIM",
+      "name": "Finnish Markka",
+      "symbol": "mk",
+      "numeric_code": "246",
+      "active": false,
+      "start_date": "1860-01-01",
+      "end_date": "2001-12-31"
+    },
+    "IEP": {
+      "code": "IEP",
+      "name": "Irish Pound",
+      "symbol": "£",
+      "numeric_code": "372",
+      "active": false,
+      "start_date": "1928-01-01",
+      "end_date": "2001-12-31"
+    },
+    "PTE": {
+      "code": "PTE",
+      "name": "Portuguese Escudo",
+      "symbol": "$",
+      "numeric_code": "620",
+      "active": false,
+      "start_date": "1911-05-22",
+      "end_date": "2001-12-31"
+    },
+    "GRD": {
+      "code": "GRD",
+      "name": "Greek Drachma",
+      "symbol": "Δρχ",
+      "numeric_code": "300",
+      "active": false,
+      "start_date": "1832-02-08",
+      "end_date": "2000-12-31"
+    }
+  }
+}
