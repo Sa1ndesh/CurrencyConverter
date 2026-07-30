@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Sa1ndesh/CurrencyConverter/main/doc/logo.png" width="180" alt="Global Currency Logo">
+  <img src="https://raw.githubusercontent.com/Sa1ndesh/CurrencyConverter/main/logo.png" width="180" alt="Global Currency Logo">
 </p>
-
 <h1 align="center">🌍 Global Currency Converter</h1>
 
 <p align="center">
