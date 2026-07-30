@@ -4,7 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "global-currency"
-version = "1.0.0"
+version = "1.0.1"
+
 description = "Historical and current currency conversion across active and legacy world currencies with multi-provider fallbacks and complete provenance."
 readme = "README.md"
 authors = [

@@ -22,7 +22,8 @@ from global_currency.exceptions import (
 from global_currency.formatting import format_currency
 from global_currency.models import ConversionResult, CurrencyInfo, RateObservation
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
+
 
 __all__ = [
     "CurrencyConverter",
