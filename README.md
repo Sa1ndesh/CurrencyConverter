@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" width="180" alt="Global Currency Logo">
+  <img src="C:\Users\Sande\.gemini\antigravity\scratch\global-currency\doc" width="180" alt="Global Currency Logo">
 </p>
 
 <h1 align="center">🌍 Global Currency Converter</h1>
